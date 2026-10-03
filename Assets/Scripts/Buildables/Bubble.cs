@@ -7,6 +7,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] private float wobbleAmount = 0.25f;
     [SerializeField] private float windDrag = 2f;
     [SerializeField] private float lifetime = 10f;
+    [SerializeField] private float playerBounceForce = 10f;
 
     private Vector3 windVelocity;
     private float wobblePhase;
@@ -24,6 +25,14 @@ public class Bubble : MonoBehaviour
         windVelocity += force * Time.deltaTime;
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player") && !other.transform.root.CompareTag("Player"))
+            return;
+        
+        BouncePlayer(other.transform, other.ClosestPoint(transform.position));
+    }
+
     void Update()
     {
         windVelocity = Vector3.MoveTowards(windVelocity, Vector3.zero, windDrag * Time.deltaTime);
@@ -34,6 +43,21 @@ public class Bubble : MonoBehaviour
         position.x += wobbleX - previousWobbleX;
         previousWobbleX = wobbleX;
         transform.position = position;
+    }
+
+    void BouncePlayer(Transform player, Vector3 contactPoint)
+    {
+        Vector3 direction = player.position - contactPoint;
+        if (direction.sqrMagnitude < 0.0001f)
+            direction = player.position - transform.position;
+        if (direction.sqrMagnitude < 0.0001f)
+            direction = Vector3.up;
+
+        CharacterController3DLateral character = player.GetComponentInParent<CharacterController3DLateral>();
+        if (character != null)
+            character.AddKnockback(direction.normalized * playerBounceForce);
+
+        Destroy(gameObject);
     }
 
     float CurrentWobbleX()

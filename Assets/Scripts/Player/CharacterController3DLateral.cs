@@ -13,6 +13,9 @@ public class CharacterController3DLateral : MonoBehaviour
   [SerializeField] private float coyoteTime = 0.15f;
   [SerializeField] private float jumpBufferTime = 0.15f;
 
+  [Header("Knockback")]
+  [SerializeField] private float knockbackDecay = 8f;
+
   [Header("Grounded Check")]
   [SerializeField] private Transform groundCheck;
   [SerializeField] private float groundCheckRadius = 0.2f;
@@ -25,6 +28,7 @@ public class CharacterController3DLateral : MonoBehaviour
 
   private Rigidbody rigidBody;
   private Vector2 moveInput;
+  private Vector3 knockbackVelocity;
   private bool isGrounded;
 
   /* Timers */
@@ -123,10 +127,18 @@ public class CharacterController3DLateral : MonoBehaviour
       rigidBody.linearVelocity += Vector3.up * (Physics.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime);
   }
 
+  public void AddKnockback(Vector3 impulse)
+  {
+    knockbackVelocity += new Vector3(impulse.x, 0f, impulse.z);
+    rigidBody.linearVelocity += new Vector3(0f, impulse.y, 0f);
+  }
+
   private void HandleMovement()
   {
-    // Se aplica el movimiento en el eje X manteniendo la velocidad en Y y Z
-    rigidBody.linearVelocity = new Vector3(moveInput.x * moveSpeed, rigidBody.linearVelocity.y, rigidBody.linearVelocity.z);
+    knockbackVelocity = Vector3.MoveTowards(knockbackVelocity, Vector3.zero, knockbackDecay * Time.fixedDeltaTime);
+
+    // Se aplica el movimiento en el eje X manteniendo la velocidad en Y y Z, más el knockback
+    rigidBody.linearVelocity = new Vector3(moveInput.x * moveSpeed + knockbackVelocity.x, rigidBody.linearVelocity.y, rigidBody.linearVelocity.z + knockbackVelocity.z);
   }
 
   private void CheckGrounded()
