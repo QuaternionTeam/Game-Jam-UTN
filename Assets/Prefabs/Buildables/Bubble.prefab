@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4320667152234746803}
   - component: {fileID: 4617405063890788104}
   - component: {fileID: 4320667152234746810}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6861236303155a34eac18c8854030ccd, type: 2}
+  - {fileID: 2100000, guid: 8a03699002cc1914b9d6b8a948b68120, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,11 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b62e0cc7ed6504099d1c890a71c480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bubble
-  riseSpeed: 1.5
+  riseSpeed: 1
   wobbleSpeed: 1
   wobbleAmount: 0.1
   windDrag: 2
-  lifetime: 10
+  lifetime: 40
   playerBounceForce: 10
 --- !u!54 &4320667152234746810
 Rigidbody:
