@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameOverTrigger : MonoBehaviour
+public class GameOverTrigger2D : MonoBehaviour
 {
   private void OnTriggerEnter2D(Collider2D collision)
   {
