@@ -6,7 +6,7 @@ public class TrampolineTrigger : MonoBehaviour
   [SerializeField] private Animator animator;
   private static readonly int TriggerHash = Animator.StringToHash("Trigger");
 
-  void OnTriggerEnter2D(Collider2D other)
+  void OnTriggerEnter(Collider other)
   {
     TryLaunch(other.transform);
   }
