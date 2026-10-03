@@ -3,8 +3,8 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     [SerializeField] private float riseSpeed = 1.5f;
-    [SerializeField] private float wobbleSpeed = 2f;
-    [SerializeField] private float wobbleAmount = 0.25f;
+    [SerializeField] private float wobbleSpeed = 1f;
+    [SerializeField] private float wobbleAmount = 0.1f;
     [SerializeField] private float windDrag = 2f;
     [SerializeField] private float lifetime = 10f;
     [SerializeField] private float playerBounceForce = 10f;

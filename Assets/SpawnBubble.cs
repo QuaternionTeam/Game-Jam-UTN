@@ -18,7 +18,8 @@ public class SpawnBubble : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         BubbleCannon bubbleCannon = animator.GetComponentInParent<BubbleCannon>();
-        Instantiate(bubbleCannon.bubblePrefab, bubbleCannon.bubbleSpawner.position, bubbleCannon.bubbleSpawner.rotation);
+        Bubble bubble = Instantiate<Bubble>(bubbleCannon.bubblePrefab, bubbleCannon.bubbleSpawner.position, bubbleCannon.bubbleSpawner.rotation);
+        bubble.AddForce(bubbleCannon.bubbleSpawner.forward * 10f);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

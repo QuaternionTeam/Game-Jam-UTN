@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bubble
   riseSpeed: 1.5
-  wobbleSpeed: 2
-  wobbleAmount: 0.25
+  wobbleSpeed: 1
+  wobbleAmount: 0.1
   windDrag: 2
   lifetime: 10
   playerBounceForce: 10
