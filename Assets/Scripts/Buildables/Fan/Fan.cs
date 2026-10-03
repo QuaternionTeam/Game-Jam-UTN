@@ -9,7 +9,7 @@ public class Fan : Buildable
     void Update()
     {
         Vector3 origin = transform.position;
-        Vector3 direction = transform.forward;
+        Vector3 direction = transform.right;
         float halfAngle = coneAngle * 0.5f;
 
         foreach (Bubble bubble in FindObjectsByType<Bubble>(FindObjectsSortMode.None))
@@ -29,7 +29,7 @@ public class Fan : Buildable
     void OnDrawGizmosSelected()
     {
         Vector3 origin = transform.position;
-        Vector3 direction = transform.forward;
+        Vector3 direction = transform.right;
         float radius = Mathf.Tan(coneAngle * 0.5f * Mathf.Deg2Rad) * range;
 
         Vector3 up = Mathf.Abs(Vector3.Dot(direction, Vector3.up)) > 0.99f ? Vector3.right : Vector3.up;
