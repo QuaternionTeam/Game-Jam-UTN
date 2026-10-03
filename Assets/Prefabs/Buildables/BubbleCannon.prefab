@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f6508f98963854686cfba4374e7f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BubbleMachine
-  lifetime: 20
+  lifetime: 10
   index: 0
   bubblePrefab: {fileID: 4617405063890788104, guid: 2a133e9620eeec445ba28b24eca6b564, type: 3}
   animator: {fileID: 272899164481104290}

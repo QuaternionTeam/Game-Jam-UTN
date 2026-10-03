@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController3DLateral
   moveSpeed: 5
-  jumpForce: 7
+  jumpForce: 6
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   coyoteTime: 0.15

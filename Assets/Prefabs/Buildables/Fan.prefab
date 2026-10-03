@@ -99,8 +99,8 @@ MonoBehaviour:
   lifetime: 20
   index: 3
   range: 5
-  coneAngle: 45
-  force: 10
+  coneAngle: 50
+  force: 7.5
 --- !u!1 &6994404372319291415
 GameObject:
   m_ObjectHideFlags: 0

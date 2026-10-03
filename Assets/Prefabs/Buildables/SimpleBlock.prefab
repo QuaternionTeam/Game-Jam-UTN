@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616f5e3bd8e2cf941911d1a7fb59f6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buildable
-  lifetime: 5
+  lifetime: 10
   index: 1
 --- !u!1001 &3593940870451290197
 PrefabInstance:
