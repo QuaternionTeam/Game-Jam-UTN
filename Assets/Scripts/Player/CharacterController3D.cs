@@ -11,12 +11,14 @@ public class CharacterController3D : MonoBehaviour
 
   [Header("References")]
   [SerializeField] private Animator animator;
-  [SerializeField] private Transform cameraTransform;
 
   private CharacterController controller;
   private Vector2 moveInput;
   private Vector3 velocity;
   private bool isGrounded;
+
+  // Dirección a la que mira el personaje: derecha (+X) o izquierda (-X)
+  private bool facingRight = true;
 
   /* Hashes de animación */
   private static readonly int SpeedHash = Animator.StringToHash("Speed");
@@ -26,9 +28,6 @@ public class CharacterController3D : MonoBehaviour
   private void Awake()
   {
     controller = GetComponent<CharacterController>();
-    
-    if (cameraTransform == null && Camera.main != null)
-      cameraTransform = Camera.main.transform;
   }
 
   private void Update()
@@ -63,26 +62,24 @@ public class CharacterController3D : MonoBehaviour
 
   private void HandleMovement()
   {
-    if (moveInput.sqrMagnitude < 0.01f)
-      return;
+    // Solo se usa el eje X para movimiento lateral estilo plataformero 2D
+    float horizontal = moveInput.x;
 
-    // Calcular dirección de movimiento orientada a la vista de la cámara
-    Vector3 forward = cameraTransform.forward;
-    Vector3 right = cameraTransform.right;
-    
-    forward.y = 0f;
-    right.y = 0f;
-    forward.Normalize();
-    right.Normalize();
+    if (Mathf.Abs(horizontal) > 0.01f)
+    {
+      Vector3 moveDirection = new Vector3(horizontal, 0f, 0f);
 
-    Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
+      // Mover el Character Controller solo en el eje X
+      controller.Move(moveDirection * (moveSpeed * Time.deltaTime));
 
-    // Mover el Character Controller
-    controller.Move(moveDirection * (moveSpeed * Time.deltaTime));
+      // Girar solo hacia izquierda o derecha (180° en Y)
+      bool movingRight = horizontal > 0f;
+      if (movingRight != facingRight)
+        facingRight = movingRight;
 
-    // Rotar suavemente hacia la dirección del movimiento
-    Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+      Quaternion targetRotation = Quaternion.Euler(0f, facingRight ? 0f : 180f, 0f);
+      transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
   }
 
   private void HandleGravity()
@@ -101,7 +98,7 @@ public class CharacterController3D : MonoBehaviour
     if (animator == null)
       return;
 
-    float currentSpeed = moveInput.magnitude * moveSpeed;
+    float currentSpeed = Mathf.Abs(moveInput.x) * moveSpeed;
     // animator.SetFloat(SpeedHash, currentSpeed, 0.1f, Time.deltaTime);
     animator.SetFloat(SpeedHash, currentSpeed);
     animator.SetBool(IsGroundedHash, isGrounded);

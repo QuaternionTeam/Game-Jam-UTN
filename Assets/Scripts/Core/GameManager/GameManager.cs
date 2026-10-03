@@ -32,7 +32,10 @@ internal class GameManager : MonoBehaviour
     _gameFSM.RegisterState(new GameOverState());
     _gameFSM.RegisterState(new VictoryState());
 
-    _gameFSM.ChangeState<MainMenuState>();
+    if (SceneManager.GetActiveScene().name == "MainMenu")
+      _gameFSM.ChangeState<MainMenuState>();
+    else
+      _gameFSM.ChangeState<GameplayState>();
   }
 
   internal void StartGame()

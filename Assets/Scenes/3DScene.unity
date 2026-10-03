@@ -424,9 +424,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 517125353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8250db6af82483b4ca5a9ea43fb3b33d, type: 3}
+  m_Script: {fileID: 11500000, guid: c022f876ea04c404a8d828447c0ea846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  audioMixer: {fileID: 24100000, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  masterGroup: {fileID: 24300002, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  musicGroup: {fileID: -5293153131610947380, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  sfxGroup: {fileID: -5293153131610947380, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  uiGroup: {fileID: -3428617934138495428, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  voiceGroup: {fileID: 8200848075574962122, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  sfxPoolSize: 16
+  sounds: []
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae0daff6c37ddc4ebd3db7254e27080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  pauseUI: {fileID: 0}
 --- !u!114 &998092279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,7 +916,6 @@ MonoBehaviour:
   jumpHeight: 1.5
   gravity: -19.62
   animator: {fileID: 2020816232}
-  cameraTransform: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
