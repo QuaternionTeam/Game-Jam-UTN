@@ -59,4 +59,12 @@ internal class GameManager : MonoBehaviour
     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     SceneManager.LoadScene(currentSceneIndex);
   }
+
+  internal void NextLevel()
+  {
+    _gameFSM.ChangeState<GameplayState>();
+
+    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+    SceneManager.LoadScene(nextSceneIndex);
+  }
 }
