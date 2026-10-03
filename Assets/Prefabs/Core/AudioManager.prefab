@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &634454181409980339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3396044609454289509}
+  - component: {fileID: 3680566927558225832}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3396044609454289509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634454181409980339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3680566927558225832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634454181409980339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c022f876ea04c404a8d828447c0ea846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  audioMixer: {fileID: 24100000, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  masterGroup: {fileID: 24300002, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  musicGroup: {fileID: -5293153131610947380, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  sfxGroup: {fileID: 9053695319783067491, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  uiGroup: {fileID: -3428617934138495428, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  voiceGroup: {fileID: 8200848075574962122, guid: 328ce3fe71e57764e8cf96d0f2e62dc9, type: 2}
+  sfxPoolSize: 16
+  sounds:
+  - Name: Button_Hover
+    Clip: {fileID: 8300000, guid: 6e7624ed306195149ad88d2551e2b0ae, type: 3}
+    channel: 3
+    Volume: 0.2
+    Pitch: 1
+    Loop: 0
+    randomizePitch: 0
+    pitchVariance: 0
+  - Name: Button_Click
+    Clip: {fileID: 8300000, guid: d5102fb62c5449745bb80f1c4483c84e, type: 3}
+    channel: 0
+    Volume: 0.8
+    Pitch: 1
+    Loop: 0
+    randomizePitch: 0
+    pitchVariance: 0
+  - Name: Main_Menu_Music
+    Clip: {fileID: 8300000, guid: 84ef570d08e067e489922ddc5202913f, type: 3}
+    channel: 1
+    Volume: 0.5
+    Pitch: 1
+    Loop: 1
+    randomizePitch: 0
+    pitchVariance: 0
