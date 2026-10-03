@@ -164,8 +164,8 @@ public class CharacterController3DLateral : MonoBehaviour
 
   public void AddKnockback(Vector3 impulse)
   {
-    knockbackVelocity += new Vector3(impulse.x, 0f, impulse.z);
-    rigidBody.linearVelocity += new Vector3(0f, impulse.y, 0f);
+    // knockbackVelocity += new Vector3(impulse.x, 0f, impulse.z);
+    rigidBody.linearVelocity = new Vector3(0f, impulse.y, 0f);
   }
 
   public void LaunchUpward(float verticalSpeed)
