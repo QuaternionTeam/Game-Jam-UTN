@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   buildables:
   - id: Cannon
-    prefab: {fileID: 8376512574676566520, guid: 7a82dd7c25baa3d49ad7872a82dbd0b8, type: 3}
+    prefab: {fileID: 1666548025411009439, guid: 7a82dd7c25baa3d49ad7872a82dbd0b8, type: 3}
     icon: {fileID: -4218420967808578321, guid: d1b38694def5c6453a24f036bee9dd81, type: 3}
     amount: 1
   - id: Block
@@ -54,7 +54,7 @@ MonoBehaviour:
     icon: {fileID: 901615717469525438, guid: 9d0169da9ac3cfcf0834e454099f5645, type: 3}
     amount: 1
   - id: Trampoline
-    prefab: {fileID: 4735670492464567223, guid: a8e2cbf2b805dec438b6198c5f586f29, type: 3}
+    prefab: {fileID: 1470319837273565330, guid: a8e2cbf2b805dec438b6198c5f586f29, type: 3}
     icon: {fileID: 3071336274873145252, guid: e3ef56018e850c6298a15cf3cd1fb1bc, type: 3}
     amount: 1
   - id: Fan
