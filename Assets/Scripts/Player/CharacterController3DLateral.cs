@@ -108,7 +108,7 @@ public class CharacterController3DLateral : MonoBehaviour
 
   private void HandleJump()
   {
-    rigidBody.linearVelocity = new Vector3(rigidBody.linearVelocity.x, jumpForce, rigidBody.linearVelocity.z);
+    LaunchUpward(jumpForce);
 
     jumpBufferCounter = 0f;
     coyoteTimeCounter = 0f;
@@ -131,6 +131,11 @@ public class CharacterController3DLateral : MonoBehaviour
   {
     knockbackVelocity += new Vector3(impulse.x, 0f, impulse.z);
     rigidBody.linearVelocity += new Vector3(0f, impulse.y, 0f);
+  }
+
+  public void LaunchUpward(float verticalSpeed)
+  {
+    rigidBody.linearVelocity = new Vector3(rigidBody.linearVelocity.x, verticalSpeed, rigidBody.linearVelocity.z);
   }
 
   private void HandleMovement()

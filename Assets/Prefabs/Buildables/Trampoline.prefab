@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &748660886340009499
+--- !u!1 &4735670492464567223
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2328515567083532537}
-  - component: {fileID: 3005109851907596022}
-  - component: {fileID: 3849087049952012011}
-  - component: {fileID: 6527510310807296129}
-  - component: {fileID: 9184563267483450330}
-  - component: {fileID: -1155806725500494275}
-  - component: {fileID: 3294677818957407344}
+  - component: {fileID: 2307740730766101449}
+  - component: {fileID: 4134381606000230746}
+  - component: {fileID: 8822939084080804125}
+  - component: {fileID: 7377368500306016087}
+  - component: {fileID: 1470319837273565330}
   m_Layer: 0
-  m_Name: SimpleBlock
+  m_Name: Trampoline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2328515567083532537
+--- !u!4 &2307740730766101449
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
+  m_GameObject: {fileID: 4735670492464567223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.89, y: 0.35, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.605, y: -1.76, z: 0}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3005109851907596022
+--- !u!33 &4134381606000230746
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3849087049952012011
+  m_GameObject: {fileID: 4735670492464567223}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &8822939084080804125
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
+  m_GameObject: {fileID: 4735670492464567223}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -94,13 +92,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6527510310807296129
-BoxCollider:
+--- !u!136 &7377368500306016087
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
+  m_GameObject: {fileID: 4735670492464567223}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112,50 +110,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9184563267483450330
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &1470319837273565330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
+  m_GameObject: {fileID: 4735670492464567223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6684a6ebf82ee4f9e9825bd10e1c05, type: 3}
+  m_Script: {fileID: 11500000, guid: ca6f2ad141a2a1e45950e6bbf7c849d9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleBlock
-  prefab: {fileID: 9184563267483450330}
-  lifetime: 5
---- !u!114 &-1155806725500494275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c31f31eb752594aa60e9f601286d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InGameUI
-  pausePanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  victoryPanel: {fileID: 0}
---- !u!114 &3294677818957407344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748660886340009499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6684a6ebf82ee4f9e9825bd10e1c05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleBlock
-  prefab: {fileID: 0}
-  lifetime: 5
+  m_EditorClassIdentifier: Assembly-CSharp::Trampoline
