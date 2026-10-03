@@ -201,9 +201,11 @@ public class CharacterController3DLateral : MonoBehaviour
 
     /* Rotamos el modelo 3D en el eje Y a 90° o -90° según la dirección */
     if (moveInput.x > 0.1f)
-      modelTransform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+      transform.rotation = Quaternion.Euler(0f, 0, 0f);
+      //modelTransform.localRotation = Quaternion.Euler(0f, 90f, 0f);
     else if (moveInput.x < -0.1f)
-      modelTransform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+      transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+      //modelTransform.localRotation = Quaternion.Euler(0f, -90f, 0f);
   }
 
   private void UpdateAnimations()
