@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4349815444798717653}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.831, y: 0.431, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -142,7 +142,6 @@ MonoBehaviour:
   animator: {fileID: 272899164481104290}
   bubbleSpawner: {fileID: 8236859710800521722}
   spawnInterval: 1
-  spawnHeight: 1
 --- !u!1001 &5954636057091052595
 PrefabInstance:
   m_ObjectHideFlags: 0

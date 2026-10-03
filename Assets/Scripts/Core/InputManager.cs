@@ -11,6 +11,9 @@ internal class InputManager : MonoBehaviour
   internal Vector2 MoveInput { get; private set; }
   internal static event Action OnJumpPressed;
   internal static event Action OnPausePressed;
+  internal static event Action OnInteractPressed;
+  internal static event Action OnArrowUpPressed;
+  internal static event Action OnArrowDownPressed;
 
 
   internal void Awake()
@@ -51,8 +54,26 @@ internal class InputManager : MonoBehaviour
   }
 
   internal void OnPause(InputValue value)
-    {
-      if (value.isPressed)
-        OnPausePressed?.Invoke();
-    }
+  {
+    if (value.isPressed)
+      OnPausePressed?.Invoke();
+  }
+
+  internal void OnInteract(InputValue value)
+  {
+    if (value.isPressed)
+      OnInteractPressed?.Invoke();
+  }
+
+  internal void OnArrowUp(InputValue value)
+  {
+    if (value.isPressed)
+      OnArrowUpPressed?.Invoke();
+  }
+
+  internal void OnArrowDown(InputValue value)
+  {
+    if (value.isPressed)
+      OnArrowDownPressed?.Invoke();
+  }
 }

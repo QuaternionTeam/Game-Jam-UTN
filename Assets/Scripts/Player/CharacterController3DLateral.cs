@@ -24,6 +24,7 @@ public class CharacterController3DLateral : MonoBehaviour
 
   [Header("References")]
   [SerializeField] private Transform modelTransform; // Para rotarlo
+  [SerializeField] private Transform buildableSpawner;
   [SerializeField] private Animator animator;
 
   private Rigidbody rigidBody;
@@ -45,7 +46,6 @@ public class CharacterController3DLateral : MonoBehaviour
   {
     rigidBody = GetComponent<Rigidbody>();
 
-    // Congelar rotaciones para evitar que el personaje se caiga o gire por colisiones
     rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
 
     if (modelTransform == null)
@@ -75,11 +75,45 @@ public class CharacterController3DLateral : MonoBehaviour
   private void OnEnable()
   {
     InputManager.OnJumpPressed += StartJumpBufferTimer;
+    InputManager.OnInteractPressed += Build;
   }
 
   private void OnDisable()
   {
     InputManager.OnJumpPressed -= StartJumpBufferTimer;
+    InputManager.OnInteractPressed -= Build;
+  }
+
+  private void Build()
+  {
+    // 1. Validar que exista el LevelManager
+    if (LevelManager.Instance == null)
+    {
+      Debug.LogWarning("No se encontró una instancia de LevelManager en la escena.");
+      return;
+    }
+
+    BuildableItem itemToBuild = LevelManager.Instance.SelectedBuildable;
+
+    // 2. Validar que el ítem seleccionado sea válido y tenga asignado un prefab
+    if (itemToBuild == null || itemToBuild.prefab == null)
+    {
+      Debug.LogWarning("No hay ningún objeto seleccionable válido o el prefab está nulo.");
+      return;
+    }
+
+    // 3. Verificar si hay stock disponible
+    if (itemToBuild.amount > 0)
+    {
+      Instantiate(itemToBuild.prefab, buildableSpawner.position, buildableSpawner.rotation);
+
+      // 4. Consumir el objeto reduciendo la cantidad
+      itemToBuild.amount--;
+
+      Debug.Log($"Objeto {itemToBuild.prefab.name} construido. Quedan: {itemToBuild.amount}");
+    }
+    else
+      Debug.Log($"Sin stock suficiente para construir {itemToBuild.prefab.name}.");
   }
 
   private void StartJumpBufferTimer()
