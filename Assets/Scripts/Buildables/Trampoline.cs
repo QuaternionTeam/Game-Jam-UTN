@@ -1,17 +1,15 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Trampoline : Buildable
 {
     [SerializeField] private float launchSpeed = 8f;
+    [SerializeField] private Animator animator;
+    private static readonly int TriggerHash = Animator.StringToHash("Trigger");
 
     void OnTriggerEnter(Collider other)
     {
         TryLaunch(other.transform);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        TryLaunch(collision.transform);
     }
 
     void TryLaunch(Transform other)
@@ -25,5 +23,6 @@ public class Trampoline : Buildable
 
         character.LaunchUpward(launchSpeed);
         GameEvents.RequestPlaySound("Boing_Cartoon");
+        animator.SetTrigger(TriggerHash);
     }
 }
