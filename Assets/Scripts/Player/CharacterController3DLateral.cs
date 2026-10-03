@@ -96,6 +96,7 @@ public class CharacterController3DLateral : MonoBehaviour
     BuildableItem itemToBuild = LevelManager.Instance.SelectedBuildable;
 
     // 2. Validar que el ítem seleccionado sea válido y tenga asignado un prefab
+    Debug.Log($"Intentando construir: {itemToBuild?.prefab?.name ?? "Ninguno"}");
     if (itemToBuild == null || itemToBuild.prefab == null)
     {
       Debug.LogWarning("No hay ningún objeto seleccionable válido o el prefab está nulo.");
@@ -108,7 +109,7 @@ public class CharacterController3DLateral : MonoBehaviour
       Instantiate(itemToBuild.prefab, buildableSpawner.position, buildableSpawner.rotation);
 
       // 4. Consumir el objeto reduciendo la cantidad
-      itemToBuild.amount--;
+      LevelManager.Instance.RemoveBuildable(itemToBuild.prefab.index);
 
       Debug.Log($"Objeto {itemToBuild.prefab.name} construido. Quedan: {itemToBuild.amount}");
     }

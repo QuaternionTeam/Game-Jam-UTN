@@ -40,6 +40,7 @@ internal class InputManager : MonoBehaviour
   }
 
   public bool IsJumpHeld => _playerInput.actions["Jump"].IsPressed();
+  public bool IsInteractHeld => _playerInput.actions["Interact"].IsPressed();
 
   /* Callbacks del PlayerInput (vía Send Messages)*/
   internal void OnMove(InputValue value)

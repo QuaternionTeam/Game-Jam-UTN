@@ -3,7 +3,7 @@ using UnityEngine;
 public class Buildable : MonoBehaviour
 {
   [SerializeField] private float lifetime = 5f;
-  [SerializeField] protected int index;
+  [SerializeField] public int index;
 
   void Start()
   {
