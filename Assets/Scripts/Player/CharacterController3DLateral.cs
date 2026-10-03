@@ -106,6 +106,11 @@ public class CharacterController3DLateral : MonoBehaviour
     // 3. Verificar si hay stock disponible
     if (itemToBuild.amount > 0)
     {
+      if (!isGrounded)
+      {
+        // TODO: TRIGGER Sound
+        return;
+      }
       Instantiate(itemToBuild.prefab, buildableSpawner.position, buildableSpawner.rotation);
 
       // 4. Consumir el objeto reduciendo la cantidad
