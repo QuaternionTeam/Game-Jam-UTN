@@ -107,7 +107,7 @@ internal class AudioManager : MonoBehaviour
     };
   }
 
-  private void Play(string soundName)
+  /*private void Play(string soundName)
   {
     if (!_soundDictionary.TryGetValue(soundName, out Sound sound))
     {
@@ -143,6 +143,40 @@ internal class AudioManager : MonoBehaviour
     freeSource.pitch = pitch;
 
     freeSource.PlayOneShot(sound.Clip, sound.Volume);
+  }*/
+  private void Play(string soundName)
+  {
+    if (!_soundDictionary.TryGetValue(soundName, out Sound sound))
+    {
+      Debug.LogWarning($"[AudioManager] No se encontró el sonido: {soundName}");
+      return;
+    }
+
+    if (sound.Loop)
+    {
+      if (sound.Source != null && !sound.Source.isPlaying)
+        sound.Source.Play();
+      return;
+    }
+
+    AudioSource freeSource = GetFreeAudioSource();
+    if (freeSource == null)
+    {
+      Debug.LogWarning("[AudioManager] Pool de AudioSource agotado.");
+      return;
+    }
+
+    freeSource.clip = sound.Clip;
+    freeSource.outputAudioMixerGroup = GetMixerGroup(sound.channel);
+
+    float pitch = sound.Pitch;
+    if (sound.randomizePitch)
+      pitch += Random.Range(-sound.pitchVariance, sound.pitchVariance);
+
+    freeSource.pitch = pitch;
+    freeSource.volume = sound.Volume;
+
+    freeSource.Play();
   }
 
   private void Stop(string soundName)

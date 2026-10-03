@@ -64,4 +64,9 @@ public class Bubble : MonoBehaviour
     {
         return Mathf.Sin(Time.time * wobbleSpeed + wobblePhase) * wobbleAmount;
     }
+
+    void OnDestroy()
+    {
+        GameEvents.RequestPlaySound("Bubble_Pop");
+    }
 }

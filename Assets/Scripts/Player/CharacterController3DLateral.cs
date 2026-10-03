@@ -114,6 +114,7 @@ public class CharacterController3DLateral : MonoBehaviour
     coyoteTimeCounter = 0f;
 
     animator.SetTrigger(JumpHash);
+    GameEvents.RequestPlaySound("Boing_Jump");
   }
 
   private void ApplyBetterJumpPhysics()

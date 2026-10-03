@@ -24,5 +24,6 @@ public class Trampoline : Buildable
             return;
 
         character.LaunchUpward(launchSpeed);
+        GameEvents.RequestPlaySound("Boing_Cartoon");
     }
 }

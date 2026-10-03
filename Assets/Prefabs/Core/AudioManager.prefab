@@ -76,3 +76,27 @@ MonoBehaviour:
     Loop: 1
     randomizePitch: 0
     pitchVariance: 0
+  - Name: Buble_Pop
+    Clip: {fileID: 8300000, guid: db7cae934f874aa339d1ea04c47bc329, type: 3}
+    channel: 2
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    randomizePitch: 1
+    pitchVariance: 0.3
+  - Name: Boing_Cartoon
+    Clip: {fileID: 8300000, guid: 100ced311c07fd6538e52d80bcea0739, type: 3}
+    channel: 2
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    randomizePitch: 1
+    pitchVariance: 0.2
+  - Name: Boing_Jump
+    Clip: {fileID: 8300000, guid: fc6ea66150a1721659ea837f7f84a938, type: 3}
+    channel: 2
+    Volume: 0.5
+    Pitch: 0.8
+    Loop: 0
+    randomizePitch: 1
+    pitchVariance: 0.1
