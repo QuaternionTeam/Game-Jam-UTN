@@ -256,6 +256,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4258411891960909470, guid: aa486c8f283a52ae1a3a4448a5a89432, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aa486c8f283a52ae1a3a4448a5a89432, type: 3}
       propertyPath: m_Name
       value: Cannon
@@ -267,7 +271,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: aa486c8f283a52ae1a3a4448a5a89432, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6408481697611312261}
   m_SourcePrefab: {fileID: 100100000, guid: aa486c8f283a52ae1a3a4448a5a89432, type: 3}
 --- !u!95 &272899164481104290 stripped
 Animator:
@@ -279,3 +286,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa486c8f283a52ae1a3a4448a5a89432, type: 3}
   m_PrefabInstance: {fileID: 5954636057091052595}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6924907199884827187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: aa486c8f283a52ae1a3a4448a5a89432, type: 3}
+  m_PrefabInstance: {fileID: 5954636057091052595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &6408481697611312261
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924907199884827187}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 902396b55a175755faecf337edb48804, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 902396b55a175755faecf337edb48804, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

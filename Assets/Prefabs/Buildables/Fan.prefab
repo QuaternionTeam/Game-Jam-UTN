@@ -5010,6 +5010,9 @@ PrefabInstance:
     - {fileID: -5369972194362264560, guid: 0da3dcd186eacc75f93430b7a4dfa61a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3354533334968389544, guid: 0da3dcd186eacc75f93430b7a4dfa61a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6207052269381874437}
     - targetCorrespondingSourceObject: {fileID: 8852295667819701080, guid: 0da3dcd186eacc75f93430b7a4dfa61a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5547330821334011776}
@@ -5038,3 +5041,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpinningBlades
   rotationSpeed: 90
   rotateClockwise: 1
+--- !u!1 &7874843977244128339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3354533334968389544, guid: 0da3dcd186eacc75f93430b7a4dfa61a, type: 3}
+  m_PrefabInstance: {fileID: 4340165382515065867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &6207052269381874437
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7874843977244128339}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 902396b55a175755faecf337edb48804, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 902396b55a175755faecf337edb48804, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
