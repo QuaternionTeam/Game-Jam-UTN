@@ -76,7 +76,7 @@ MonoBehaviour:
     Loop: 1
     randomizePitch: 0
     pitchVariance: 0
-  - Name: Buble_Pop
+  - Name: Bubble_Pop
     Clip: {fileID: 8300000, guid: db7cae934f874aa339d1ea04c47bc329, type: 3}
     channel: 2
     Volume: 0.5
