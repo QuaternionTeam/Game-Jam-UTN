@@ -108,9 +108,10 @@ public class CharacterController3DLateral : MonoBehaviour
     {
       if (!isGrounded)
       {
-        // TODO: TRIGGER Sound
+        GameEvents.RequestPlaySound("Build_Fail");
         return;
       }
+      GameEvents.RequestPlaySound("Build_Success");
       Instantiate(itemToBuild.prefab, buildableSpawner.position, buildableSpawner.rotation);
 
       // 4. Consumir el objeto reduciendo la cantidad
