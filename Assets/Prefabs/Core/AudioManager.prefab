@@ -119,7 +119,7 @@ MonoBehaviour:
   - Name: Fan
     Clip: {fileID: 8300000, guid: df608b428546aba4d85cdfa675d36b56, type: 3}
     channel: 2
-    Volume: 0.5
+    Volume: 0.15
     Pitch: 1
     Loop: 1
     randomizePitch: 1
