@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9187541856886869116}
   - component: {fileID: 7246605222005969624}
   m_Layer: 0
-  m_Name: Fan
+  m_Name: FanSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6251702021671314710}
   - {fileID: 4301469906248885216}
@@ -100,7 +100,7 @@ MonoBehaviour:
   index: 3
   range: 5
   coneAngle: 50
-  force: 7.5
+  force: 5
 --- !u!1 &6994404372319291415
 GameObject:
   m_ObjectHideFlags: 0
