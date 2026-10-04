@@ -101,7 +101,7 @@ MonoBehaviour:
     randomizePitch: 1
     pitchVariance: 0.1
   - Name: Build_Success
-    Clip: {fileID: 8300000, guid: fc6ea66150a1721659ea837f7f84a938, type: 3}
+    Clip: {fileID: 8300000, guid: f7d6d869e9f3fb04e8eb4e6820186b2a, type: 3}
     channel: 2
     Volume: 0.5
     Pitch: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
     randomizePitch: 1
     pitchVariance: 0.1
   - Name: Build_Fail
-    Clip: {fileID: 8300000, guid: fc6ea66150a1721659ea837f7f84a938, type: 3}
+    Clip: {fileID: 8300000, guid: 99e1894e71df8064bbf0a66203274c09, type: 3}
     channel: 2
     Volume: 0.5
     Pitch: 1
