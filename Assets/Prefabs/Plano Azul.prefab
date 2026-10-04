@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a50732fd2996dfc4ead363a8dbcbfb3a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 50221525200203836}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a50732fd2996dfc4ead363a8dbcbfb3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2135707658665404878}
   m_SourcePrefab: {fileID: 100100000, guid: a50732fd2996dfc4ead363a8dbcbfb3a, type: 3}
 --- !u!1 &2561835981948102950 stripped
 GameObject:
@@ -93,3 +96,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51949e0fc605513393f719b52d30062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VictoryTrigger
+--- !u!65 &2135707658665404878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561835981948102950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.033457905, y: 0.010517887, z: 0.030921089}
+  m_Center: {x: 0.004330352, y: 0.010641385, z: -0.00827185}
