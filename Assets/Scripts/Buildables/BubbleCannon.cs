@@ -23,4 +23,6 @@ public class BubbleCannon : Buildable
     {
       animator.SetTrigger(TriggerHash);
     }
+    
+    public override string Name() => "Cannon";
 }

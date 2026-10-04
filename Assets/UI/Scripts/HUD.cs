@@ -8,9 +8,7 @@ internal class HUD : MonoBehaviour
     private void Start()
     {
         for (int i = 0; i < slots.Count; i++)
-        {
             SetupSlot(i);
-        }
         LevelManager.Instance.OnSelectedBuildable += OnSelectSlot;
         LevelManager.Instance.OnAddBuildable += SetupSlot;
         LevelManager.Instance.OnRemoveBuildable += SetupSlot;
@@ -18,9 +16,15 @@ internal class HUD : MonoBehaviour
     }
 
     private void SetupSlot(int index) {
-        BuildableItem item = LevelManager.Instance.GetBuildableAtIndex(index);
-        slots[index].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = item.icon;
-        slots[index].transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = item.amount.ToString();
+        if (index < LevelManager.Instance.BuildableCount)
+        {
+            slots[index].SetActive(true);
+            BuildableItem item = LevelManager.Instance.GetBuildableAtIndex(index);
+            slots[index].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = item.icon;
+            slots[index].transform.GetChild(1).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = item.amount.ToString();
+        }
+        else
+            slots[index].SetActive(false);
     }
 
     private void OnSelectSlot() {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Buildable : MonoBehaviour
+public abstract class Buildable : MonoBehaviour
 {
   [SerializeField] private float lifetime = 5f;
   [SerializeField] public int index;
@@ -12,7 +12,9 @@ public class Buildable : MonoBehaviour
 
   void OnDestroy()
   {
-    LevelManager.Instance.AddBuildable(index);
+    LevelManager.Instance.AddBuildable(Name());
     // TODO: Add delay before adding the resource back.
   }
+
+  abstract public string Name();
 }

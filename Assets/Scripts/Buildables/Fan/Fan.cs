@@ -54,4 +54,6 @@ public class Fan : Buildable
             Gizmos.DrawLine(origin, edge);
         }
     }
+
+    public override string Name() => "Fan";
 }

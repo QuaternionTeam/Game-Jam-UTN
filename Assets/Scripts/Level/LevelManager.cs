@@ -5,10 +5,9 @@ using UnityEngine;
 [Serializable]
 public class BuildableItem
 {
-    public string id;           // Identificador o nombre opcional
-    public Buildable prefab;   // El prefab a instanciar
-    public Sprite icon;         // Imagen para mostrar en la UI
-    public int amount;          // Cantidad disponible
+  public Buildable prefab;   // El prefab a instanciar
+  public Sprite icon;         // Imagen para mostrar en la UI
+  public int amount;          // Cantidad disponible
 }
 
 public class LevelManager : MonoBehaviour
@@ -55,16 +54,33 @@ public class LevelManager : MonoBehaviour
     InputManager.OnArrowDownPressed += MoveDown;
   }
 
-  public void AddBuildable(int index)
+  private int GetIndexById(string id)
   {
+    for (int i = 0; i < buildables.Count; i++)
+    {
+      if (buildables[i].prefab != null && buildables[i].prefab.Name() == id)
+        return i;
+    }
+    return -1;
+  }
+
+  public void AddBuildable(string id)
+  {
+    int index = GetIndexById(id);
     buildables[index].amount++;
     OnAddBuildable.Invoke(index);
   }
 
-  public void RemoveBuildable(int index)
+  public void RemoveBuildable(string id)
   {
+    int index = GetIndexById(id);
     buildables[index].amount--;
     OnRemoveBuildable.Invoke(index);
+  }
+
+  public void RemoveSelectedBuildable()
+  {
+    RemoveBuildable(SelectedBuildable.prefab.Name());
   }
 
   private void SelectBuildableEvent(int index)

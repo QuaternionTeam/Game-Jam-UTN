@@ -114,7 +114,7 @@ public class CharacterController3DLateral : MonoBehaviour
       Instantiate(itemToBuild.prefab, buildableSpawner.position, buildableSpawner.rotation);
 
       // 4. Consumir el objeto reduciendo la cantidad
-      LevelManager.Instance.RemoveBuildable(itemToBuild.prefab.index);
+      LevelManager.Instance.RemoveSelectedBuildable();
 
       Debug.Log($"Objeto {itemToBuild.prefab.name} construido. Quedan: {itemToBuild.amount}");
     }
