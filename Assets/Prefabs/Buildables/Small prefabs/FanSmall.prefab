@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fan
   lifetime: 10
   index: 3
-  range: 5
+  range: 7
   coneAngle: 50
   force: 5
 --- !u!1 &6994404372319291415

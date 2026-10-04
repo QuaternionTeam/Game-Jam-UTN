@@ -143,7 +143,7 @@ MonoBehaviour:
   bubblePrefab: {fileID: 4617405063890788104, guid: fde881d25325275499d1e50bf26c740b, type: 3}
   animator: {fileID: 272899164481104290}
   bubbleSpawner: {fileID: 8236859710800521722}
-  spawnInterval: 2
+  spawnInterval: 1.25
 --- !u!65 &2711574308779859470
 BoxCollider:
   m_ObjectHideFlags: 0
