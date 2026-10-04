@@ -26,7 +26,17 @@ public class Fan : Buildable
         }
     }
 
-    void OnDrawGizmosSelected()
+  void OnEnable()
+  {
+    GameEvents.RequestPlaySound("Fan");
+  }
+
+  void OnDisable()
+  {
+    GameEvents.RequestStopSound("Fan");
+  }
+
+  void OnDrawGizmosSelected()
     {
         Vector3 origin = transform.position;
         Vector3 direction = transform.right;
