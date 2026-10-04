@@ -12,8 +12,7 @@ public abstract class Buildable : MonoBehaviour
 
   void OnDestroy()
   {
-    LevelManager.Instance.AddBuildable(Name());
-    // TODO: Add delay before adding the resource back.
+    LevelManager.Instance.StartResourceRecovery(Name());
   }
 
   abstract public string Name();

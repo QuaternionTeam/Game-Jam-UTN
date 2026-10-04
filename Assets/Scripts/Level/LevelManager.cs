@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,6 +26,8 @@ public class LevelManager : MonoBehaviour
   public event Action OnSelectedBuildable;
   public event Action<int> OnAddBuildable;
   public event Action<int> OnRemoveBuildable;
+  private readonly WaitForSeconds waitFor3Seconds = new(3);
+
 
   public BuildableItem GetBuildableAtIndex(int index)
   {
@@ -64,8 +67,14 @@ public class LevelManager : MonoBehaviour
     return -1;
   }
 
-  public void AddBuildable(string id)
+  public void StartResourceRecovery(string id)
   {
+    StartCoroutine(RecoverResource(id));
+  }
+
+  IEnumerator RecoverResource(string id)
+  {
+    yield return waitFor3Seconds;
     int index = GetIndexById(id);
     buildables[index].amount++;
     OnAddBuildable.Invoke(index);
