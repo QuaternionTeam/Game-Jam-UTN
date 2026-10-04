@@ -3367,7 +3367,7 @@ PrefabInstance:
     - target: {fileID: 4555849210636222243, guid: 7051fa3a25056abf095df1fddc200829, type: 3}
       propertyPath: buildables.Array.data[1].prefab
       value: 
-      objectReference: {fileID: 4981792479642031786, guid: b7cbc97eaafb65f468ffd6207bec63d5, type: 3}
+      objectReference: {fileID: 1215900383611126872, guid: b7cbc97eaafb65f468ffd6207bec63d5, type: 3}
     - target: {fileID: 4555849210636222243, guid: 7051fa3a25056abf095df1fddc200829, type: 3}
       propertyPath: buildables.Array.data[2].amount
       value: 1
